@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>admin</title>
+    </head>
+    <style>
+        body{
+            background-image: url('/static/report_backimg.jpg'); /* Set the path to your image */
+            
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent image repetition */
+        }
+        button {
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-top: 30px;
+            margin-left: 20px;
+            display: inline-block; /* Ensures buttons appear on the same line */
+        }
+        /* Optional: remove the default line break added by <br> tags */
+        br {
+            display: none;
+        }
+    </style>
+    <body>
+        <button type="button" value="show_data" id="show">show data</button>
+        <p>above datas are filled in DB</p>
+        <div id="content">
+            <!-- Content will be loaded here -->
+        </div>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Handle button clicks
+                document.body.addEventListener('click', function(event) {
+                    if (event.target.tagName === 'BUTTON') {
+                        const buttonId = event.target.id;
+                        fetch(`/${buttonId}`, {
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'text/html',
+                            }
+                        })
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('content').innerHTML = html;
+                        })
+                        .catch(error => {
+                            console.error('Error fetching content:', error);
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

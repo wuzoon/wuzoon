@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>
+            Pay_please
+        </title>
+    </head>
+    <style>
+        body{
+            background-image:radial-gradient(white,blue);
+        }
+        h1{
+            color: aliceblue;
+            text-shadow: 3px 3px 4px gray;
+            text-align: center;
+        }
+        .container{
+            height: max-content;
+            width: max-content;
+            background-image:radial-gradient(white,gold);
+            box-shadow: 3px 4px 4px gray;
+            position: absolute;
+            top: 150px;
+            left: 590px;
+            
+        }
+        button{
+            background-color: whitesmoke;
+        }
+    </style>
+    <body>
+        <h1>Pay with Stripe</h1>
+        <div class="container">
+            <form method="POST" action="/pay">
+                <label for="course">Select_course:</label>
+                <select>
+                    <option>pythonbasic</option>
+                </select><br>
+                <lable for="email">Your_Email(used for register)</lable>
+                <input type="email" id="Your_Email" name="Your_Email" value="email" required><br>
+
+                <label for="amount">Amount (in LKR):</label>
+                <input type="number" id="amount" name="amount" value="1500" required readonly><br><br>
+    
+                <label for="currency">Currency:</label>
+                <input type="text" id="currency" name="currency" value="LKR" required readonly><br><br>
+    
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number" name="card_number" required><br><br>
+    
+                <label for="exp_month">Expiry Month:</label>
+                <input type="text" id="exp_month" name="exp_month" required><br><br>
+    
+                <label for="exp_year">Expiry Year:</label>
+                <input type="text" id="exp_year" name="exp_year" required><br><br>
+    
+                <label for="cvc">CVC:</label>
+                <input type="text" id="cvc" name="cvc" required><br><br>
+    
+                <button type="submit">Pay</button>
+            </form>
+        </div>
+        
+        
+    </body>
+</html>

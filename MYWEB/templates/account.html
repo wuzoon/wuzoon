@@ -1,0 +1,189 @@
+<html>
+    <head>
+        <title>
+            My_Wuzoon
+        </title>
+    </head>
+    <script src="account.js"></script>
+    <style>
+        body{
+            background-color: rgb(6, 21, 35);
+        }
+        
+        .profile{
+            height: 100px;
+            width: 1550px;
+            background-image:repeating-linear-gradient(black,whitesmoke,rgb(14, 14, 139));
+            box-shadow: 2px 2px 9px whitesmoke;
+            border-radius: 56%
+            
+            
+        }
+        .details{
+            height:650px;
+            width: 350px;
+            background-image:repeating-linear-gradient(whitesmoke,red,azure) ;
+            box-shadow: 3px 3px 3px gold;
+            position:absolute;
+            top: 110px;
+            border-radius: 14%;
+        }
+        .data{
+            height: 650px;
+            width: 800px;
+            background-image:linear-gradient(rgb(251, 218, 0),whitesmoke);
+            position: absolute;
+            top: 115px;
+            left: 450px;
+            box-shadow: 3px 3px 3px gold;
+            border-radius: 14%;
+            
+        }
+        .detail{
+            position: relative;
+            top: 150px;
+            left: 60px;
+            font-size: larger;
+            
+            
+        }
+
+       
+        .sales{
+            height: 250px;
+            width: 300px;
+            background-color: rgb(43, 62, 56);
+            position: absolute;
+            top: 220px;
+            left: 200px;
+            border-radius: 14%;
+            box-shadow: inset 4px 4px 18px orange,
+                        3px 4px 6px whitesmoke;
+            text-align: center;
+
+        }
+        .high{
+            text-align: center;
+            height: 250px;
+            width: 300px;
+            background-color: rgb(43, 62, 56);
+            position: absolute;
+            top: 220px;
+            left: 600px;
+            border-radius: 14%;
+            box-shadow: inset 4px 4px 18px orange,
+                        3px 4px 6px whitesmoke;
+
+        }
+        .highest{
+            height: 150px;
+            width: 300px;
+            background-color: rgb(43, 62, 56);
+            position: absolute;
+            top: 50px;
+            left: 380px;
+            border-radius: 14%;
+            box-shadow: inset 4px 4px 18px orange,
+                        3px 4px 6px whitesmoke;
+            text-align: center;
+        }
+        .last_month{
+            height: 250px;
+            width: 300px;
+            background-color: rgb(43, 62, 56);
+            position: absolute;
+            top: 200px;
+            left: 600px;
+            border-radius: 14%;
+            box-shadow: inset 4px 4px 18px orange,
+            3px 4px 6px whitesmoke;
+            
+        }
+        #one{
+            font-family: serif;
+            position: absolute;
+            top: 5px;
+            left: 700px;
+        }
+        #three{
+            position: absolute;
+            top: 55px;
+            left: 400px;
+        }
+        #two{
+            position: absolute;
+            top: 55px;
+            left: 680px;
+        }
+        #four{
+            position: absolute;
+            top: 55px;
+            left: 880px;
+            
+        }
+        #five{
+            position: absolute;
+            top: 55px;
+            left: 1080px;
+            
+        }
+        .monthly_report{
+            position: relative;
+            right: 130px;
+        }
+        
+    </style>
+    <body onload="changing()">
+        <div class="container" >
+            <div class="profile">
+                <div id="one"><h1>Helloo, <span>{{name}}</span></h1></div>                          
+                <div id="two"><h4><span>{{Address}}</span></h4></div>
+                <div id="three"><h4>your username is <span>{{User_Name}}</span></h4></div>            
+                <div id="four"><h4><span>{{Email}}</span></h4></div>
+                <div id="five"><h4>you are,<span id="account" >{{account}}</span></h4></div>
+            
+            </div>
+            <div class="details" >
+                <div class="detail">
+                    <div id="d_one">
+                    
+                        <a href="supperadmin.html" >monthly report</a><br>
+                        <a href="seller.html">seller page</a><br>
+                        <a href="/course.html">courses</a><br>
+                        <a href="archives.html" >archives</a><br>
+                        <a href="tobuy.html">To buy</a><br>
+                        <a href="income.html">incomes</a>
+                </div>
+                <div id="d_two">
+                    
+                    <a href="admin.html" >monthly report</a><br>
+                    <a href="/course.html">courses</a><br>
+                    <a href="archives.html" >archives</a><br>
+                    <a href="tobuy.html">To buy</a>
+                    
+                </div>
+                <div id="d_three">
+                    
+                    <a href="user.html" >monthly report</a><br>
+                    <a href="/course.html">courses</a><br>
+                    <a href="archives.html" >archives</a><br>
+                    <a href="tobuy.html">To buy</a>
+                </div>
+                </div>
+                
+
+            </div>
+            <div class="data" action="/data" method="get">
+                
+                <div class="monthly_report">
+                    <div class="highest"><h4>more boughted</h4><br><span>{{highest}}</span></div>
+                    <div class="sales"><h4>Today</h4><br><span>{{sale}}</span></div>
+                    <div class="high"><h4>Highersales</h4><br><span>{{higher}}</span></div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </body>
+</html>

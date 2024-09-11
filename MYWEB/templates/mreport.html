@@ -1,0 +1,73 @@
+<html>
+<head>
+    
+    <title>Your_Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" value="Registration" id="Registration"></button>
+    <button type="button" value="payment" id="payment"></button>
+    <button type="button" value="login" id="logins"></button>
+    <button type="button" value="highersales" id="highersales"></button>
+    <button type="button" value="mypayment" id="mypayment"></button>
+    <button type="button" value="bought" id="bought"></button>
+    <h1>Registration Data</h1>
+    {% if data %}
+        <table>
+            <thead>
+                <tr>
+                    {% for header in data[0].keys() %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr>
+                        {% for item in row.values() %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h1>payment Data</h1>
+    {% if data1 %}
+        <table>
+            <thead>
+                <tr>
+                    {% for header in data1[0].keys() %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data1 %}
+                    <tr>
+                        {% for item in row.values() %}
+                            <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>

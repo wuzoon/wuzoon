@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <form id="searchForm">
+        User: <input type="text" name="user" id="user">
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="content">
+        <!-- Content will be loaded here -->
+    </div>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle form submission via JavaScript
+            document.getElementById('searchForm').addEventListener('submit', function(event) {
+                event.preventDefault();  // Prevent the default form submission
+                const user = document.getElementById('user').value.trim();
+
+                fetch('/checkitout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `user=${encodeURIComponent(user)}`
+                })
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('content').innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error fetching content:', error);
+                });
+            });
+
+            // Handle button clicks
+            document.getElementById('content').addEventListener('click', function(event) {
+                if (event.target.tagName === 'BUTTON') {
+                    const buttonId = event.target.id;
+                    fetch(`/${buttonId}`)
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('content').innerHTML = html;
+                        })
+                        .catch(error => {
+                            console.error('Error fetching content:', error);
+                        });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

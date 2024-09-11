@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Wuzoon</title>
+    <style>
+        body {
+            background-color: rgb(43, 154, 162);
+        }
+        .container {
+            height: max-content;
+            width: 400px;
+            background-color:rgb(90, 244, 255);
+            box-shadow: 6px 4px 4px 3px whitesmoke,
+                        inset 3px 3px 3px gray;
+            position: fixed;
+            top: 20px;
+            left: 75px;
+            border-radius: 14%;
+        }
+        .field {
+            display: flex;
+            padding-bottom: 10px;
+            font-size: large;
+            align-items: center;
+        
+        }
+        
+        .p {
+            font-size: larger;
+            position: relative;
+            top: 150px;
+            padding-left: 600px;
+        }
+        #submit{
+            background-color: aqua;
+            width: 60px;
+            border-radius: 4%;
+        }
+        #reset{
+            background-color: crimson;
+            width: 60px;
+            border-radius: 4%;
+        }
+        a{
+            position: relative;
+            top:300px;
+            left: 600px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/submit" method="post">
+            <pre>
+                <div class="field">        NAME:         <input type="text" name="NAME" placeholder="Your Actual Name" required></div>
+                <div class="field">        USER_NAME:    <input type="text" name="USER_NAME" placeholder="Your User Name" required></div><br>
+                <div class="field">        ADDRESS:      <input type="text" name="ADDRESS" placeholder="Your Actual Address" required></div>
+                <div class="field">        PASSWORD:     <input type="text" name="PASSWORD" placeholder="Password" required></div>
+                <div class="field">        MOBILE:       <input type="tel" name="MOBILE" placeholder="Your Actual Mobile Number" required></div>
+                <div class="field">        E-MAIL:       <input type="email" name="E-MAIL" placeholder="Your Actual E-MAIL" required></div>
+                <div class="field">        CITY:         <input type="text" name="CITY" placeholder="Your Actual CITY" required></div>
+                <div class="field">        COUNTRY:      <input type="text" name="COUNTRY" placeholder="Your Actual Contry" required></div>
+                
+                                    
+                
+                <input id="submit" type="submit" value="Submit">            <input id="reset" type="reset" value="Reset">
+            </pre>
+        </form>
+    </div>
+    <div class="p">
+        Your future will be unlocked by us. If you successfully register on our website,
+        then you will be redirected to the login page. After your successful login, you will 
+        go to your account page.
+    </div>
+    <a href="/">Go To Wuzoon Home</a>
+    
+    
+</body>
+</html>

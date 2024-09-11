@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login_wuzoon</title>
+    <style>
+        body {
+            background-image:radial-gradient(rgb(175, 130, 14), rgb(71, 4, 4));
+        }
+        .container {
+            background-color: rgb(90, 235, 235);
+            box-shadow: 10px 10px 20px 20px rgb(73, 85, 189);
+            height: 350px;
+            width: 300px;
+            position: relative;
+            top: 150px;
+            left: 600px;
+            border-radius: 6%;
+        }
+        .field {
+            font-size: larger;
+            padding-bottom: 20px;
+            
+        }
+        #button {
+            width: 165px;
+            background-color: blue;
+            border-radius: 6%;
+            color: aliceblue;
+        }
+        form {
+            position: relative;
+            top: 50px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/login" method="post">
+            <pre>
+            <div class="field">User_Name* <input type="text" name="User_Name" required></div>
+            <div class="field">password*  <input type="password" name="Password" required></div>
+            <div class="field">
+            <input id="button" onclick="myfunc()" type="submit" value="Login">
+            </div>
+                    <div class="field"><a href="register.html">Go To Register</a></div>
+            </pre>
+            
+        </form>
+    </div>
+    <script>
+        function myfunc() {
+            var click = document.getElementById('button');
+            console.log("hello");
+        }
+    </script>
+</body>
+</html>

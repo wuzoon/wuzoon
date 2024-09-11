@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Search</title>
+    <style>
+        #search {
+            text-align: center;
+            box-shadow: 4px 4px 4px gray;
+            margin-bottom: 30px;
+        }
+        body {
+            background-image: linear-gradient(white, rgb(54, 219, 4),yellow);
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Courses</h2>
+    <h3><a href="tobuy.html">For_more</a></h3>
+    <div id="courses">
+
+        <span>{{no_courses | safe }}</span>
+        <br><span>{{nocourses | safe}}</span>
+    </div>
+
+    
+</body>
+</html>
